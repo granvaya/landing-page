@@ -1,4 +1,4 @@
-import { BookOpenText } from "lucide-react";
+
 import { footer } from "../data/content";
 
 function InstagramIcon(props) {
@@ -35,9 +35,7 @@ export default function Footer() {
         <div className="flex flex-col gap-10 sm:flex-row sm:items-start sm:justify-between">
           <div>
             <a href="#top" className="flex items-center gap-2.5">
-              <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-cream text-navy">
-                <BookOpenText size={16} strokeWidth={2} />
-              </span>
+              <img src="/granvayalogo.jpg" alt="Granvaya" className="h-8 w-auto rounded-lg" />
               <span className="font-display text-[18px] font-medium text-cream">Granvaya</span>
             </a>
             <p className="mt-3 text-[13.5px]">{footer.tagline}</p>

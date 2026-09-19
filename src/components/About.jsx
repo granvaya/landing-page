@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { GraduationCap, X, FileText, ChevronDown } from "lucide-react";
+import { X, FileText, ChevronDown } from "lucide-react";
 import { about, trust } from "../data/content";
 import { SectionEyebrow } from "./Section";
 
@@ -18,9 +18,7 @@ export default function About() {
             transition={{ duration: 0.5 }}
             className="rounded-3xl bg-cream-deep p-8 sm:p-10"
           >
-            <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-navy text-cream">
-              <GraduationCap size={20} />
-            </span>
+            <img src="/granvayalogo.jpg" alt="Granvaya" className="h-11 w-auto rounded-xl" />
             <SectionEyebrow>{about.kicker}</SectionEyebrow>
             <p className="font-display mt-4 text-[22px] leading-snug text-ink">
               {about.body}

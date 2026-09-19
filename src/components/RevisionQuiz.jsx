@@ -20,10 +20,10 @@ export default function RevisionQuiz() {
   const reset = () => setSelected(null);
 
   return (
-    <div className="relative">
-      <div className="absolute -left-5 -bottom-5 h-full w-full rounded-[28px] bg-sage-soft/60 -z-10" />
+    <div className="relative w-full">
+      <div className="absolute -left-2 sm:-left-5 -bottom-3 sm:-bottom-5 h-full w-full rounded-[20px] sm:rounded-[28px] bg-sage-soft/60 -z-10" />
 
-      <div className="w-full max-w-[550px] rounded-[28px] border border-cream-line bg-white p-5 shadow-lift">
+      <div className="w-full sm:max-w-[550px] rounded-[20px] sm:rounded-[28px] border border-cream-line bg-white p-4 sm:p-5 shadow-lift">
         <div className="flex items-center justify-between px-1">
           <span className="rounded-full bg-navy px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-cream">
             {revisionCard.day}
@@ -39,12 +39,12 @@ export default function RevisionQuiz() {
         </div>
 
         {revisionCard.matrix && (
-          <div className="mt-4 overflow-x-auto rounded-lg border border-cream-line">
-            <table className="w-full min-w-[500px] text-left text-[10px] sm:text-[11px] border-collapse">
+          <div className="mt-3 -mx-1 overflow-x-auto rounded-lg border border-cream-line">
+            <table className="w-full min-w-[480px] text-left text-[9px] sm:text-[11px] border-collapse">
               <thead>
                 <tr className="bg-cream/50">
                   {revisionCard.matrix.headers.map((h, i) => (
-                    <th key={i} className="border-b border-r border-cream-line p-2 font-semibold text-ink-soft last:border-r-0">
+                    <th key={i} className="border-b border-r border-cream-line p-1.5 sm:p-2 font-semibold text-ink-soft last:border-r-0 leading-tight">
                       {h}
                     </th>
                   ))}
@@ -53,11 +53,11 @@ export default function RevisionQuiz() {
               <tbody>
                 {revisionCard.matrix.rows.map((row, i) => (
                   <tr key={i} className="border-b border-cream-line last:border-b-0">
-                    <td className="border-r border-cream-line p-2 font-semibold text-ink-soft bg-cream/20">
+                    <td className="border-r border-cream-line p-1.5 sm:p-2 font-semibold text-ink-soft bg-cream/20 leading-tight">
                       {row.executive}
                     </td>
                     {row.cols.map((col, j) => (
-                      <td key={j} className="border-r border-cream-line p-2 text-ink last:border-r-0">
+                      <td key={j} className="border-r border-cream-line p-1.5 sm:p-2 text-ink last:border-r-0 leading-tight">
                         {col}
                       </td>
                     ))}
@@ -68,7 +68,7 @@ export default function RevisionQuiz() {
           </div>
         )}
 
-        <p className="mt-4 px-1 text-[15px] font-medium leading-snug text-ink">
+        <p className="mt-3 px-1 text-[13px] sm:text-[15px] font-medium leading-snug text-ink">
           {revisionCard.question}
         </p>
 

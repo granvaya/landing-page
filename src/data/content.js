@@ -12,7 +12,7 @@ export const hero = {
   eyebrow: "Current affairs for UPSC",
   headline: "Read the news once. Remember it on exam day.",
   sub: "Granvaya turns daily current affairs into syllabus linked notes, then revises them with you on Day 1, 3, 7 and 21 — so nothing you read is wasted.",
-  ctaPrimary: "Join the early-access pilot",
+  ctaPrimary: "Join the early access pilot",
   ctaSecondary: "See how it works",
   stat: { value: 21, suffix: "-day", label: "spaced revision cycle, built in" },
 };
@@ -43,19 +43,19 @@ export const todayFeed = [
     tag: "REVISION",
     tagTone: "revise",
     time: "Day 7",
-    heading: "GI tag for a Kutch handicraft — one quick-check due",
+    heading: "GI tag for a Kutch handicraft: one quick check due",
     meta: "GS 1 · Culture",
   },
 ];
 
 export const problems = [
   {
-    title: "Hours of note-making, every day",
+    title: "Hours of note making, every day",
     body: "You retype the same paragraph from three different papers before you even reach the syllabus mapping.",
   },
   {
     title: "The same story, five places",
-    body: "One event, five write-ups, zero clarity about which version to trust on exam day.",
+    body: "One event, five write ups, zero clarity about which version to trust on exam day.",
   },
   {
     title: "Read in March, forgotten by May",
@@ -116,12 +116,12 @@ export const features = [
   {
     icon: "grid",
     title: "Mapped to GS 1–4",
-    body: "Every note sits under its syllabus topic, with cross-links across papers.",
+    body: "Every note sits under its syllabus topic, with cross links across papers.",
   },
   {
     icon: "triangle-alert",
     title: "Prelims traps flagged",
-    body: "A marker flags facts examiners like to twist — ministry, statutory status, membership, firsts.",
+    body: "A marker flags facts examiners like to twist: ministry, statutory status, membership, firsts.",
   },
   {
     icon: "pen-line",
@@ -146,20 +146,20 @@ export const importanceLevels = [
     label: "High",
     tone: "terracotta",
     body: "Returns across papers, close to a past year pattern, or actively developing. Revise first.",
-    example: "CRZ notification amendments — third GS 3 appearance this year.",
+    example: "CRZ notification amendments: third GS 3 appearance this year.",
   },
   {
     id: "medium",
     label: "Medium",
     tone: "mustard",
     body: "Relevant and plausible, but hasn't shown the same pull in past papers yet.",
-    example: "India-EU FTA round 9 — steady but not yet a repeat theme.",
+    example: "India-EU FTA round 9: steady but not yet a repeat theme.",
   },
   {
     id: "low",
     label: "Low",
     tone: "sage",
-    body: "Good-to-know. Keep the gist, skip the memorisation until it resurfaces.",
+    body: "Good to know. Keep the gist, skip the memorisation until it resurfaces.",
     example: "State level handicraft GI tag — context only, low recall value.",
   },
 ];
@@ -176,7 +176,7 @@ export const trust = [
   },
   {
     title: "Mistakes are corrected openly",
-    body: "In a public changelog — no silent edits, no pretending we got it right the first time.",
+    body: "In a public changelog: no silent edits, no pretending we got it right the first time.",
   },
   {
     title: "Importance is published before the exam",
@@ -195,14 +195,14 @@ export const examYears = ["2026", "2027", "2028", "Not decided"];
 export const faqs = [
   {
     q: "Is Granvaya free?",
-    a: "The pilot is free. Pricing will be announced before launch, and early-access members get a locked-in founder rate.",
+    a: "The pilot is free. Pricing will be announced before launch, and early access members get a locked in founder rate.",
   },
   {
     q: "Which newspapers do you cover?",
     a: "The Hindu, The Indian Express and PIB to start, with more sources added based on pilot feedback.",
   },
   {
-    q: "Is this just AI-generated notes?",
+    q: "Is this just AI generated notes?",
     a: "No. Software helps us sort and link the news, but every note is reviewed by a UPSC aspirant before it's published.",
   },
   {
@@ -215,12 +215,12 @@ export const faqs = [
   },
   {
     q: "Can I use it alongside my current notes?",
-    a: "Most pilot users do — Granvaya is built to fill the revision gap, not replace the sources you already trust.",
+    a: "Most pilot users do: Granvaya is built to fill the revision gap, not replace the sources you already trust.",
   },
 ];
 
 export const footer = {
-  tagline: "Read. Retain. Reproduce.",
+  tagline: "Revise. Retain. Reproduce.",
   contact: "support@granvaya.in",
   links: ["Instagram", "Telegram", "X"],
   legal: ["Privacy Policy", "Terms"],

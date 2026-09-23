@@ -9,6 +9,7 @@ import About from "./components/About";
 import JoinPilot from "./components/JoinPilot";
 import FAQ from "./components/FAQ";
 import Footer from "./components/Footer";
+import { ScrollDissolveReveal } from "./components/ScrollDissolveReveal";
 
 export default function App() {
   const formRef = useRef(null);
@@ -21,19 +22,30 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-cream text-ink">
-      <Navbar onJoin={scrollToForm} />
-      <main>
-        <Hero onJoin={scrollToForm} />
-        <Problem />
-        <HowItWorks />
-        <Features />
-        <ImportanceDemo />
-        <About />
-        <JoinPilot ref={formRef} />
-        <FAQ />
-      </main>
-      <Footer />
+    <div className="min-h-screen text-ink relative">
+      <div className="absolute inset-0 -z-10 pointer-events-none">
+        <ScrollDissolveReveal
+          imageFront="/art-front.jpg"
+          imageBack="/art-back.jpg"
+          containerClassName="absolute inset-0 h-full"
+          className="h-screen sticky top-0 opacity-70"
+        />
+        <div className="fixed inset-0 z-0 mix-blend-overlay pointer-events-none opacity-40 bg-[url('https://www.transparenttextures.com/patterns/cream-paper.png')]"></div>
+      </div>
+      <div className="relative z-10 bg-gradient-to-b from-cream/90 via-cream/50 to-cream/90 min-h-screen">
+        <Navbar onJoin={scrollToForm} />
+        <main>
+          <Hero onJoin={scrollToForm} />
+          <Problem />
+          <HowItWorks />
+          <Features />
+          <ImportanceDemo />
+          <About />
+          <JoinPilot ref={formRef} />
+          <FAQ />
+        </main>
+        <Footer />
+      </div>
     </div>
   );
 }

@@ -10,6 +10,7 @@ import JoinPilot from "./components/JoinPilot";
 import FAQ from "./components/FAQ";
 import Footer from "./components/Footer";
 import { ScrollDissolveReveal } from "./components/ScrollDissolveReveal";
+import EdgeRail from "./components/EdgeRail";
 
 export default function App() {
   const formRef = useRef(null);
@@ -23,16 +24,17 @@ export default function App() {
 
   return (
     <div className="min-h-screen text-ink relative">
-      <div className="absolute inset-0 -z-10 pointer-events-none">
+      <div className="absolute inset-0 z-0 pointer-events-none">
         <ScrollDissolveReveal
           imageFront="/art-front.jpg"
           imageBack="/art-back.jpg"
           containerClassName="absolute inset-0 h-full"
           className="h-screen sticky top-0 opacity-70"
         />
-        <div className="fixed inset-0 z-0 mix-blend-overlay pointer-events-none opacity-40 bg-[url('https://www.transparenttextures.com/patterns/cream-paper.png')]"></div>
       </div>
-      <div className="relative z-10 bg-gradient-to-b from-cream/90 via-cream/50 to-cream/90 min-h-screen">
+      <div className="grain fixed inset-0 z-[60] pointer-events-none mix-blend-multiply opacity-[0.22]" />
+      <EdgeRail />
+      <div className="relative z-10 lg:pr-10 bg-gradient-to-b from-paper/90 via-paper/60 to-paper/90 min-h-screen">
         <Navbar onJoin={scrollToForm} />
         <main>
           <Hero onJoin={scrollToForm} />
@@ -49,3 +51,4 @@ export default function App() {
     </div>
   );
 }
+

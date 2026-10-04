@@ -1,36 +1,30 @@
 import { motion } from "framer-motion";
-import { Clock, Copy, CalendarX } from "lucide-react";
 import { problems } from "../data/content";
 import { SectionHeading } from "./Section";
 
-const icons = [Clock, Copy, CalendarX];
-
 export default function Problem() {
   return (
-    <section className="py-20 sm:py-24">
-      <div className="mx-auto max-w-6xl px-5 sm:px-8">
-        <SectionHeading title="Current affairs is where most preparation leaks." />
+    <section className="py-20 sm:py-28">
+      <div className="mx-auto max-w-[1280px] px-5 sm:px-8">
+        <SectionHeading no="01" eyebrow="The leak" title="Current affairs is where most preparation leaks." />
 
-        <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-3">
-          {problems.map((p, i) => {
-            const Icon = icons[i];
-            return (
-              <motion.div
-                key={p.title}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="rounded-2xl border border-cream-line bg-white p-6"
-              >
-                <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-cream-deep text-navy">
-                  <Icon size={19} strokeWidth={1.8} />
-                </span>
-                <h3 className="font-display mt-5 text-[19px] text-ink">{p.title}</h3>
-                <p className="mt-2 text-[14.5px] leading-relaxed text-ink-soft">{p.body}</p>
-              </motion.div>
-            );
-          })}
+        <div className="mt-14 grid grid-cols-1 border-y-2 border-ink sm:grid-cols-3">
+          {problems.map((p, i) => (
+            <motion.article
+              key={p.title}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              className={`p-7 sm:p-9 ${i > 0 ? "border-t-2 border-ink sm:border-l-2 sm:border-t-0" : ""}`}
+            >
+              <span className="font-display block text-[6.5rem] leading-[0.85] text-transparent [-webkit-text-stroke:2px_var(--color-ink)]">
+                {i + 1}
+              </span>
+              <h3 className="font-display mt-6 text-[26px] leading-[1.1] text-ink">{p.title}</h3>
+              <p className="mt-3 text-[18px] leading-relaxed text-ink-soft">{p.body}</p>
+            </motion.article>
+          ))}
         </div>
       </div>
     </section>

@@ -30,27 +30,27 @@ const iconMap = { Instagram: InstagramIcon, Telegram: TelegramIcon, X: XIcon };
 
 export default function Footer() {
   return (
-    <footer className="bg-navy-deep text-cream/70">
-      <div className="mx-auto max-w-6xl px-5 sm:px-8 py-14">
+    <footer className="overflow-hidden bg-ink text-paper/75">
+      <div className="mx-auto max-w-[1280px] px-5 sm:px-8 pt-14">
         <div className="flex flex-col gap-10 sm:flex-row sm:items-start sm:justify-between">
           <div>
-            <a href="#top" className="flex items-center gap-2.5">
-              <img src="/granvayalogo.jpg" alt="Granvaya" className="h-8 w-auto rounded-lg" />
-              <span className="font-display text-[18px] font-medium text-cream">Granvaya</span>
+            <a href="#top" className="flex items-center gap-3">
+              <img src="/granvayalogo.jpg" alt="Granvaya" className="h-9 w-auto border-2 border-paper/60" />
+              <span className="font-display text-[22px] text-paper">Granvaya</span>
             </a>
-            <p className="mt-3 text-[13.5px]">{footer.tagline}</p>
+            <p className="mt-4 font-mono text-[12px] uppercase tracking-[0.2em] text-marker">{footer.tagline}</p>
           </div>
 
-          <div className="flex gap-16">
+          <div className="flex flex-wrap gap-x-16 gap-y-8">
             <div>
-              <p className="text-[12px] font-semibold uppercase tracking-wide text-cream/40">Contact</p>
-              <a href={`mailto:${footer.contact}`} className="mt-2 block text-[13.5px] hover:text-cream">
+              <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-paper/45">Contact</p>
+              <a href={`mailto:${footer.contact}`} className="mt-3 block text-[17px] hover:text-marker">
                 {footer.contact}
               </a>
             </div>
             <div>
-              <p className="text-[12px] font-semibold uppercase tracking-wide text-cream/40">Follow</p>
-              <div className="mt-2 flex gap-3">
+              <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-paper/45">Follow</p>
+              <div className="mt-3 flex gap-3">
                 {footer.links.map((label) => {
                   const Icon = iconMap[label];
                   return (
@@ -58,19 +58,19 @@ export default function Footer() {
                       key={label}
                       href="#"
                       aria-label={label}
-                      className="flex h-8 w-8 items-center justify-center rounded-full bg-cream/10 hover:bg-cream/20 transition-colors"
+                      className="flex h-9 w-9 items-center justify-center border-2 border-paper/40 transition-colors hover:border-marker hover:bg-marker hover:text-ink"
                     >
-                      <Icon width={14} height={14} />
+                      <Icon width={15} height={15} />
                     </a>
                   );
                 })}
               </div>
             </div>
             <div>
-              <p className="text-[12px] font-semibold uppercase tracking-wide text-cream/40">Legal</p>
-              <div className="mt-2 flex flex-col gap-1.5">
+              <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-paper/45">Legal</p>
+              <div className="mt-3 flex flex-col gap-1.5">
                 {footer.legal.map((label) => (
-                  <a key={label} href="#" className="text-[13.5px] hover:text-cream">
+                  <a key={label} href="#" className="text-[17px] hover:text-marker">
                     {label}
                   </a>
                 ))}
@@ -79,9 +79,17 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 border-t border-cream/10 pt-6 text-[12.5px] text-cream/45">
+        <p className="mt-12 border-t border-paper/20 pt-5 font-mono text-[11.5px] uppercase tracking-[0.12em] text-paper/45">
           {footer.disclaimer}
-        </div>
+        </p>
+      </div>
+
+      {/* oversized wordmark, bleeding off the bottom edge */}
+      <div
+        aria-hidden="true"
+        className="font-display select-none whitespace-nowrap text-center text-[clamp(4.5rem,21vw,19rem)] leading-[0.74] text-paper -mb-[0.1em] pt-6"
+      >
+        Granvaya
       </div>
     </footer>
   );

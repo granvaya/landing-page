@@ -1,44 +1,44 @@
 @import "tailwindcss";
 
+/* The Gazette — newsprint, ink and a single vermilion stamp. */
 @theme {
-  --font-display: "Fraunces", ui-serif, Georgia, serif;
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  --font-display: "Rozha One", "Times New Roman", serif;
+  --font-body: "Newsreader", Georgia, serif;
+  --font-mono: "DM Mono", ui-monospace, Menlo, monospace;
 
-  --color-ink: #14181f;
-  --color-ink-soft: #4c5262;
-  --color-ink-faint: #8b90a0;
+  --color-ink: #14110e;
+  --color-ink-soft: #4a443a;
+  --color-ink-faint: #857c6b;
 
-  --color-cream: #fbf8f1;
-  --color-cream-deep: #f1ead9;
-  --color-cream-line: #e6dfcd;
+  --color-paper: #ece4d0;
+  --color-paper-deep: #ddd2b4;
+  --color-paper-hi: #f7f1e1;
 
-  --color-navy: #1f3a52;
-  --color-navy-deep: #142838;
-  --color-navy-soft: #35566f;
+  --color-vermilion: #d63a1c;
+  --color-vermilion-soft: #f2c9ba;
 
-  --color-gold: #c48a3a;
-  --color-gold-soft: #e9c98b;
+  --color-marker: #f2cf3a;
+  --color-marker-soft: #f7e8a0;
 
-  --color-terracotta: #c15b3c;
-  --color-terracotta-soft: #f1ded4;
+  --color-pine: #2d6a49;
+  --color-pine-soft: #cddfc6;
+  --color-mint: #86cfa4;
 
-  --color-mustard: #b8912b;
-  --color-mustard-soft: #f2e6c4;
+  --shadow-block: 6px 6px 0 0 var(--color-ink);
+  --shadow-block-sm: 3px 3px 0 0 var(--color-ink);
 
-  --color-sage: #4f7a5e;
-  --color-sage-soft: #dce9df;
-
-  --shadow-soft: 0 2px 8px rgba(20, 24, 31, 0.06);
-  --shadow-card: 0 1px 2px rgba(20, 24, 31, 0.04), 0 12px 32px -12px rgba(20, 24, 31, 0.14);
-  --shadow-lift: 0 24px 60px -20px rgba(20, 24, 31, 0.35);
-
-  --animate-marquee: marquee 28s linear infinite;
+  --animate-marquee: marquee 38s linear infinite;
 }
 
 @keyframes marquee {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
+}
+
+@keyframes stamp-in {
+  0%   { opacity: 0; transform: rotate(-14deg) scale(1.7); }
+  60%  { opacity: 1; transform: rotate(-5deg) scale(0.96); }
+  100% { opacity: 1; transform: rotate(-5deg) scale(1); }
 }
 
 html {
@@ -47,35 +47,54 @@ html {
 
 body {
   margin: 0;
-  background: var(--color-cream);
+  background: var(--color-paper);
   color: var(--color-ink);
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
 
 ::selection {
-  background: var(--color-gold-soft);
-  color: var(--color-navy-deep);
+  background: var(--color-marker);
+  color: var(--color-ink);
 }
 
 .font-display {
   font-family: var(--font-display);
-  font-feature-settings: "ss01" 1;
+  font-weight: 400;
+  letter-spacing: -0.012em;
 }
 
-.paper-texture {
-  background-image: radial-gradient(circle at 1px 1px, rgba(20, 24, 31, 0.05) 1px, transparent 0);
-  background-size: 22px 22px;
+.font-mono {
+  font-family: var(--font-mono);
 }
 
-.hairline {
-  border-color: var(--color-cream-line);
+/* printed-paper grain, laid over the whole page */
+.grain {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .5 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
 }
 
-/* custom focus ring, no default blue */
+/* ruled newspaper columns */
+.rule-double {
+  border-top: 4px double var(--color-ink);
+}
+
+/* highlighter swipe behind a phrase */
+.marker-swipe {
+  background-image: linear-gradient(transparent 58%, var(--color-marker) 58%, var(--color-marker) 92%, transparent 92%);
+  padding: 0 0.08em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.stamp-in {
+  animation: stamp-in 0.5s cubic-bezier(0.2, 0.9, 0.3, 1) both;
+}
+
 :focus-visible {
-  outline: 2px solid var(--color-navy);
+  outline: 3px solid var(--color-vermilion);
   outline-offset: 2px;
 }

@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Sparkles, RefreshCcw, Lightbulb, RotateCw } from "lucide-react";
 import { todayFeed } from "../data/content";
 
 const toneStyles = {
-  new: { bg: "bg-terracotta-soft", text: "text-terracotta", icon: Sparkles },
-  update: { bg: "bg-mustard-soft", text: "text-mustard", icon: RefreshCcw },
-  info: { bg: "bg-sage-soft", text: "text-sage", icon: Lightbulb },
-  revise: { bg: "bg-navy/10", text: "text-navy", icon: RotateCw },
+  new: "bg-vermilion text-paper-hi",
+  update: "bg-marker text-ink",
+  info: "bg-pine text-paper-hi",
+  revise: "bg-ink text-paper-hi",
 };
 
 export default function TodayCard() {
@@ -28,25 +27,23 @@ export default function TodayCard() {
   }, []);
 
   return (
-    <div className="relative">
-      {/* floating accent card behind */}
-      <div className="absolute -right-5 -top-5 h-full w-full rounded-[28px] bg-gold-soft/60 -z-10" />
+    <div className="relative w-full max-w-[440px] rotate-[1.2deg]">
+      {/* strip of tape holding the clipping */}
+      <div className="absolute -top-4 left-1/2 z-10 h-7 w-28 -translate-x-1/2 -rotate-3 bg-marker/80 shadow-[0_1px_0_rgba(20,17,14,0.25)]" />
 
-      <div className="w-full max-w-[360px] rounded-[28px] border border-cream-line bg-white p-5 shadow-lift">
-        <div className="flex items-center justify-between px-1 pb-4">
+      <div className="border-2 border-ink bg-paper-hi p-5 pt-7 shadow-block">
+        <div className="flex items-end justify-between border-b-4 border-double border-ink pb-3">
           <div>
-            <p className="text-[11px] font-semibold uppercase tracking-wider text-ink-faint">Today</p>
-            <p className="font-display text-lg text-ink">Fri, 19 Sep</p>
+            <p className="font-mono text-[10.5px] uppercase tracking-[0.22em] text-ink-faint">The daily brief</p>
+            <p className="font-display text-[26px] leading-none text-ink">Fri, 19 Sep</p>
           </div>
-          <div className="flex h-9 w-9 items-center justify-center rounded-full bg-navy text-cream text-xs font-bold">
+          <div className="flex h-10 w-10 items-center justify-center border-2 border-ink bg-ink font-display text-[22px] text-paper">
             G
           </div>
         </div>
 
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col">
           {todayFeed.map((item, i) => {
-            const tone = toneStyles[item.tagTone];
-            const Icon = tone.icon;
             const isActive = i === active;
             return (
               <button
@@ -55,27 +52,18 @@ export default function TodayCard() {
                   setActive(i);
                   setProgress(0);
                 }}
-                className={`relative overflow-hidden rounded-2xl border px-4 py-3 text-left transition-all duration-300 ${
-                  isActive
-                    ? "border-navy/15 bg-cream shadow-soft scale-[1.02]"
-                    : "border-cream-line bg-white hover:bg-cream/60"
+                className={`relative overflow-hidden border-b border-ink/25 px-3 py-3.5 text-left transition-colors duration-300 last:border-b-0 ${
+                  isActive ? "bg-marker-soft" : "hover:bg-paper-deep/50"
                 }`}
               >
-                {isActive && (
-                  <motion.div
-                    className="absolute bottom-0 left-0 h-[2px] bg-gold"
-                    style={{ width: `${progress}%` }}
-                  />
-                )}
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2.5">
                   <span
-                    className={`flex items-center gap-1 rounded-full ${tone.bg} ${tone.text} px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide`}
+                    className={`px-2 py-0.5 font-mono text-[10px] font-medium uppercase tracking-[0.12em] ${toneStyles[item.tagTone]}`}
                   >
-                    <Icon size={10} strokeWidth={2.5} />
                     {item.tag}
                   </span>
                   {item.time && (
-                    <span className="text-[11px] font-medium text-ink-faint">{item.time}</span>
+                    <span className="font-mono text-[10.5px] uppercase tracking-[0.1em] text-ink-faint">{item.time}</span>
                   )}
                 </div>
                 <AnimatePresence mode="wait">
@@ -83,12 +71,15 @@ export default function TodayCard() {
                     key={item.heading}
                     initial={{ opacity: 0.4 }}
                     animate={{ opacity: 1 }}
-                    className="mt-1.5 text-[14px] font-semibold leading-snug text-ink"
+                    className="mt-2 font-display text-[19px] leading-[1.15] text-ink"
                   >
                     {item.heading}
                   </motion.p>
                 </AnimatePresence>
-                <p className="mt-1 text-[12px] text-ink-faint">{item.meta}</p>
+                <p className="mt-1.5 font-mono text-[10.5px] uppercase tracking-[0.14em] text-ink-soft">{item.meta}</p>
+                {isActive && (
+                  <div className="absolute bottom-0 left-0 h-[3px] bg-vermilion" style={{ width: `${progress}%` }} />
+                )}
               </button>
             );
           })}

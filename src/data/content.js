@@ -21,7 +21,7 @@ export const todayFeed = [
   {
     tag: "FRESH",
     tagTone: "new",
-    time: "Fri, 19 Sep",
+    time: "Today",
     heading: "Coastal Regulation Zone rules revised",
     meta: "GS 3 · Environment",
   },

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Check, Loader2, PartyPopper } from "lucide-react";
+import { Check, Loader2, Scissors } from "lucide-react";
 import { newspapers, stages, examYears } from "../data/content";
 
 const initialState = {
@@ -75,13 +75,13 @@ export default function SignupForm({ formRef }) {
       <motion.div
         initial={{ opacity: 0, scale: 0.96 }}
         animate={{ opacity: 1, scale: 1 }}
-        className="flex flex-col items-center rounded-3xl border border-sage/30 bg-sage-soft px-8 py-14 text-center"
+        className="flex flex-col items-center border-2 border-ink bg-paper-hi px-8 py-14 text-center shadow-block"
       >
-        <span className="flex h-14 w-14 items-center justify-center rounded-full bg-sage text-white">
-          <PartyPopper size={24} />
+        <span className="stamp-in border-[3px] border-pine px-5 py-1 font-display text-[1.9rem] uppercase leading-none tracking-[0.08em] text-pine">
+          Received
         </span>
-        <h3 className="font-display mt-5 text-2xl text-ink">You're on the list, {values.name.split(" ")[0]}.</h3>
-        <p className="mt-2 max-w-sm text-[14.5px] text-ink-soft">
+        <h3 className="font-display mt-8 text-[2rem] leading-tight text-ink">You're on the list, {values.name.split(" ")[0]}.</h3>
+        <p className="mt-3 max-w-sm text-[18px] leading-relaxed text-ink-soft">
           We'll email <span className="font-semibold text-ink">{values.email}</span> as pilot seats open for the{" "}
           {values.examYear} attempt. Keep an eye on your inbox.
         </p>
@@ -90,7 +90,7 @@ export default function SignupForm({ formRef }) {
             setValues(initialState);
             setStatus("idle");
           }}
-          className="mt-6 text-[13.5px] font-semibold text-navy underline underline-offset-2"
+          className="mt-7 font-mono text-[12px] font-medium uppercase tracking-[0.12em] text-ink underline decoration-vermilion decoration-2 underline-offset-4"
         >
           Sign up another email
         </button>
@@ -99,7 +99,15 @@ export default function SignupForm({ formRef }) {
   }
 
   return (
-    <form ref={formRef} onSubmit={submit} noValidate className="rounded-3xl border border-cream-line bg-white p-6 sm:p-8">
+    <form
+      ref={formRef}
+      onSubmit={submit}
+      noValidate
+      className="relative border-2 border-dashed border-ink bg-paper-hi p-6 pt-9 shadow-block sm:p-9 sm:pt-11"
+    >
+      <span className="absolute -top-[13px] left-6 bg-paper-hi px-2 text-ink">
+        <Scissors size={22} strokeWidth={1.8} />
+      </span>
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         <Field label="Name" error={errors.name}>
           <input
@@ -155,7 +163,7 @@ export default function SignupForm({ formRef }) {
       </div>
 
       <div className="mt-5">
-        <p className="mb-2.5 text-[13px] font-semibold text-ink-soft">Newspaper you read</p>
+        <p className="mb-3 font-mono text-[11.5px] font-medium uppercase tracking-[0.18em] text-ink-soft">Newspaper you read</p>
         <div className="flex flex-wrap gap-2.5">
           {newspapers.map((paper) => {
             const checked = values.papers.includes(paper);
@@ -164,10 +172,10 @@ export default function SignupForm({ formRef }) {
                 type="button"
                 key={paper}
                 onClick={() => togglePaper(paper)}
-                className={`flex items-center gap-1.5 rounded-full border px-3.5 py-1.5 text-[13px] font-medium transition-colors ${
+                className={`flex items-center gap-2 border-2 px-3.5 py-1.5 text-[16px] font-medium transition-colors ${
                   checked
-                    ? "border-navy bg-navy text-cream"
-                    : "border-cream-line text-ink-soft hover:border-navy/30"
+                    ? "border-ink bg-ink text-paper-hi"
+                    : "border-ink/40 text-ink hover:border-ink hover:bg-marker-soft"
                 }`}
               >
                 {checked && <Check size={12} />}
@@ -181,7 +189,7 @@ export default function SignupForm({ formRef }) {
       <button
         type="submit"
         disabled={status === "submitting"}
-        className="mt-7 inline-flex w-full items-center justify-center gap-2 rounded-full bg-navy px-6 py-3.5 text-[15px] font-semibold text-cream shadow-soft transition-transform hover:-translate-y-0.5 disabled:opacity-70 sm:w-auto"
+        className="mt-8 inline-flex w-full items-center justify-center gap-2 border-2 border-ink bg-ink px-7 py-4 font-mono text-[13px] font-medium uppercase tracking-[0.14em] text-paper shadow-[6px_6px_0_0_var(--color-vermilion)] transition-all hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-none disabled:opacity-70 sm:w-auto"
       >
         {status === "submitting" ? (
           <>
@@ -198,9 +206,9 @@ export default function SignupForm({ formRef }) {
 function Field({ label, error, optional, full, children }) {
   return (
     <div className={full ? "sm:col-span-2" : ""}>
-      <label className="mb-1.5 flex items-center justify-between text-[13px] font-semibold text-ink-soft">
+      <label className="mb-1 flex h-5 items-center justify-between font-mono text-[11.5px] font-medium uppercase tracking-[0.18em] text-ink-soft">
         {label}
-        {optional && <span className="text-[11px] font-normal text-ink-faint">Optional</span>}
+        {optional && <span className="text-[10.5px] font-normal normal-case tracking-normal text-ink-faint">Optional</span>}
       </label>
       {children}
       <AnimatePresence>
@@ -209,7 +217,7 @@ function Field({ label, error, optional, full, children }) {
             initial={{ opacity: 0, y: -4 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0 }}
-            className="mt-1 text-[12px] font-medium text-terracotta"
+            className="mt-1 font-mono text-[12px] font-medium text-vermilion"
           >
             {error}
           </motion.p>
@@ -220,7 +228,7 @@ function Field({ label, error, optional, full, children }) {
 }
 
 function inputCls(error) {
-  return `w-full rounded-xl border bg-cream/40 px-4 py-[11px] text-[14.5px] text-ink outline-none transition-colors placeholder:text-ink-faint focus:bg-white ${
-    error ? "border-terracotta" : "border-cream-line focus:border-navy/40"
+  return `w-full rounded-none border-0 border-b-2 bg-transparent px-1 py-2 text-[19px] text-ink outline-none transition-colors placeholder:text-ink-faint focus:bg-marker-soft/60 ${
+    error ? "border-vermilion" : "border-ink"
   }`;
 }

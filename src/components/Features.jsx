@@ -14,11 +14,12 @@ const iconMap = {
 
 export default function Features() {
   return (
-    <section id="features" className="py-20 sm:py-24">
-      <div className="mx-auto max-w-6xl px-5 sm:px-8">
-        <SectionHeading title="Built around how UPSC actually asks." align="center" />
+    <section id="features" className="py-20 sm:py-28">
+      <div className="mx-auto max-w-[1280px] px-5 sm:px-8">
+        <SectionHeading no="03" eyebrow="The toolkit" title="Built around how UPSC actually asks." />
 
-        <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {/* shared 2px rules between cells, like a printed table */}
+        <div className="mt-14 grid grid-cols-1 gap-[2px] border-2 border-ink bg-ink sm:grid-cols-2 lg:grid-cols-3">
           {features.map((f, i) => {
             const Icon = iconMap[f.icon];
             return (
@@ -28,14 +29,22 @@ export default function Features() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.45, delay: (i % 3) * 0.08 }}
-                whileHover={{ y: -4 }}
-                className="group rounded-2xl border border-cream-line bg-white p-6 transition-shadow hover:shadow-card"
+                className="group bg-paper-hi p-7 transition-colors duration-200 hover:bg-ink sm:p-8"
               >
-                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-cream-deep text-navy transition-colors group-hover:bg-navy group-hover:text-cream">
-                  <Icon size={20} strokeWidth={1.8} />
-                </span>
-                <h3 className="font-display mt-5 text-[18px] text-ink">{f.title}</h3>
-                <p className="mt-2 text-[14.5px] leading-relaxed text-ink-soft">{f.body}</p>
+                <div className="flex items-center justify-between">
+                  <span className="font-mono text-[12px] uppercase tracking-[0.2em] text-ink-faint transition-colors group-hover:text-paper/60">
+                    No. {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span className="flex h-11 w-11 items-center justify-center border-2 border-ink text-ink transition-colors group-hover:border-marker group-hover:bg-marker">
+                    <Icon size={20} strokeWidth={1.8} />
+                  </span>
+                </div>
+                <h3 className="font-display mt-9 text-[25px] leading-[1.1] text-ink transition-colors group-hover:text-paper">
+                  {f.title}
+                </h3>
+                <p className="mt-3 text-[18px] leading-relaxed text-ink-soft transition-colors group-hover:text-paper/75">
+                  {f.body}
+                </p>
               </motion.div>
             );
           })}

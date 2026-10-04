@@ -24,7 +24,7 @@ export default function ImportanceDemo() {
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-20">
           <div>
             <SectionHeading
-              no="04"
+              no="05"
               eyebrow="Know what deserves your time"
               title="Every topic carries a High, Medium or Low tag."
               isDark

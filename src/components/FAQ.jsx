@@ -11,7 +11,7 @@ export default function FAQ() {
     <section id="faq" className="py-20 sm:py-28">
       <div className="mx-auto grid max-w-[1280px] grid-cols-1 gap-12 px-5 sm:px-8 lg:grid-cols-[0.8fr_1.5fr] lg:gap-20">
         <div className="lg:sticky lg:top-28 lg:self-start">
-          <SectionHeading no="06" eyebrow="Letters to the editor" title="Questions" />
+          <SectionHeading no="07" eyebrow="Letters to the editor" title="Questions" />
         </div>
 
         <div className="border-t-4 border-double border-ink">

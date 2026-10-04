@@ -4,6 +4,7 @@ import Hero from "./components/Hero";
 import Problem from "./components/Problem";
 import HowItWorks from "./components/HowItWorks";
 import Features from "./components/Features";
+import Pipeline from "./components/Pipeline";
 import ImportanceDemo from "./components/ImportanceDemo";
 import About from "./components/About";
 import JoinPilot from "./components/JoinPilot";
@@ -41,6 +42,7 @@ export default function App() {
           <Problem />
           <HowItWorks />
           <Features />
+          <Pipeline />
           <ImportanceDemo />
           <About />
           <JoinPilot ref={formRef} />

@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { hero } from "../data/content";
 import TodayCard from "./TodayCard";
 import CountUp from "./CountUp";
+import { useToday } from "../useToday";
 
 const EMPHASIS = "exam day";
 
@@ -20,6 +21,7 @@ function Line({ text }) {
 }
 
 export default function Hero({ onJoin }) {
+  const today = useToday();
   const lines = hero.headline.split(". ").map((chunk, i, arr) => (i < arr.length - 1 ? `${chunk}.` : chunk));
 
   return (
@@ -34,7 +36,7 @@ export default function Hero({ onJoin }) {
         >
           <span>{hero.eyebrow}</span>
           <span className="hidden sm:inline">Vol. 01 · Pilot Edition</span>
-          <span>Fri, 19 Sep</span>
+          <span>{today}</span>
         </motion.div>
 
         {/* masthead headline — each line rises out of a mask, one after another */}

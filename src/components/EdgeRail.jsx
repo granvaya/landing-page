@@ -25,11 +25,11 @@ function Sequence({ innerRef }) {
       {WORDS.map((w) => (
         <div key={w.text} className="flex flex-col items-center gap-5">
           <span
-            className={`font-mono text-[12px] font-medium uppercase tracking-[0.4em] [writing-mode:vertical-rl] ${w.tone}`}
+            className={`font-mono text-[10px] font-medium uppercase tracking-[0.4em] [writing-mode:vertical-rl] lg:text-[12px] ${w.tone}`}
           >
             {w.text}
           </span>
-          <span className="h-2 w-2 bg-vermilion" />
+          <span className="h-1.5 w-1.5 bg-vermilion lg:h-2 lg:w-2" />
         </div>
       ))}
     </div>
@@ -74,7 +74,7 @@ export default function EdgeRail() {
   return (
     <motion.aside
       aria-hidden="true"
-      className="fixed bottom-0 right-0 z-[55] hidden w-10 overflow-hidden border-l border-paper/20 bg-ink lg:block"
+      className="fixed bottom-0 right-0 z-[55] w-6 overflow-hidden border-l border-paper/20 bg-ink lg:w-10"
       style={{
         top,
         maskImage: "linear-gradient(to bottom, #000 0, #000 93%, transparent 100%)",

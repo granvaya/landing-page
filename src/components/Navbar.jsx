@@ -10,7 +10,7 @@ function Ticker() {
   ];
   const loop = [...items, ...items];
   return (
-    <div className="overflow-hidden bg-ink py-2 text-paper lg:-mr-10" aria-hidden="true">
+    <div className="overflow-hidden bg-ink py-2 text-paper -mr-6 lg:-mr-10" aria-hidden="true">
       <div className="flex w-max animate-marquee whitespace-nowrap font-mono text-[11.5px] uppercase tracking-[0.2em]">
         {loop.map((text, i) => (
           <span key={i} className="flex items-center">

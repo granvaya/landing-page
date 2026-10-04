@@ -34,7 +34,7 @@ export default function App() {
       </div>
       <div className="grain fixed inset-0 z-[60] pointer-events-none mix-blend-multiply opacity-[0.22]" />
       <EdgeRail />
-      <div className="relative z-10 lg:pr-10 bg-gradient-to-b from-paper/90 via-paper/60 to-paper/90 min-h-screen">
+      <div className="relative z-10 pr-6 lg:pr-10 bg-gradient-to-b from-paper/90 via-paper/60 to-paper/90 min-h-screen">
         <Navbar onJoin={scrollToForm} />
         <main>
           <Hero onJoin={scrollToForm} />

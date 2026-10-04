@@ -20,7 +20,7 @@ export default function About() {
           >
             <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
               <img src="/granvayalogo.jpg" alt="Granvaya" className="h-12 w-auto shrink-0 border-2 border-ink" />
-              <SectionEyebrow no="05">{about.kicker}</SectionEyebrow>
+              <SectionEyebrow no="06">{about.kicker}</SectionEyebrow>
             </div>
             <span className="font-display mt-6 block h-12 text-[6rem] leading-[0.9] text-vermilion" aria-hidden="true">
               “

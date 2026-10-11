@@ -98,3 +98,14 @@ body {
   outline: 3px solid var(--color-vermilion);
   outline-offset: 2px;
 }
+
+/* <granvaya-pipeline> before its script loads: hold its space so the page doesn't jump */
+granvaya-pipeline:not(:defined) {
+  display: block;
+  aspect-ratio: 1240 / 680;
+}
+@media (max-width: 761px) {
+  granvaya-pipeline:not(:defined) {
+    aspect-ratio: 580 / 1430;
+  }
+}

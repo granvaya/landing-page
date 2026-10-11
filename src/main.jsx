@@ -1,9 +1,11 @@
 import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
+import { ViteReactSSG } from "vite-react-ssg/single-page";
 import "./index.css";
 import App from "./App.jsx";
 
-createRoot(document.getElementById("root")).render(
+// Built with `vite-react-ssg build`: the page's HTML is written at build time so crawlers and
+// link previews get real text, then React hydrates it in the browser.
+export const createRoot = ViteReactSSG(
   <StrictMode>
     <App />
   </StrictMode>

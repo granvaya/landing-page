@@ -1,8 +1,13 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
-import "./pipeline/granvaya-pipeline.js";
 import { SectionHeading } from "./Section";
 
 export default function Pipeline() {
+  // The element extends HTMLElement, so it can only be defined in the browser.
+  useEffect(() => {
+    import("./pipeline/granvaya-pipeline.js");
+  }, []);
+
   return (
     <section id="pipeline" className="border-t-2 border-ink py-20 sm:py-28">
       <div className="mx-auto max-w-[1280px] px-5 sm:px-8">

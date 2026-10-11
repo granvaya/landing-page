@@ -10,9 +10,11 @@ export function formatToday(d = new Date()) {
 
 // Returns today's date label and rolls it over at midnight if the tab stays open.
 export function useToday() {
-  const [label, setLabel] = useState(() => formatToday());
+  // empty until mounted: the prerendered HTML must not carry the day the site was built
+  const [label, setLabel] = useState("");
 
   useEffect(() => {
+    setLabel(formatToday());
     let timer;
     const schedule = () => {
       const now = new Date();

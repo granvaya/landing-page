@@ -1,5 +1,5 @@
 import { lazy, Suspense, useRef } from "react";
-import { ClientOnly } from "vite-react-ssg";
+import ClientOnly from "./components/ClientOnly";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Problem from "./components/Problem";

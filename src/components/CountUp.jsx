@@ -1,10 +1,12 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { useInView } from "framer-motion";
 
 export default function CountUp({ to, suffix = "", duration = 1200 }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-10% 0px" });
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState(to);
+
+  useLayoutEffect(() => setValue(0), []);
 
   useEffect(() => {
     if (!inView) return;

@@ -37,7 +37,7 @@ export default function TodayCard() {
         <div className="flex items-end justify-between border-b-4 border-double border-ink pb-3">
           <div>
             <p className="font-mono text-[10.5px] uppercase tracking-[0.22em] text-ink-faint">The daily brief</p>
-            <p className="font-display text-[26px] leading-none text-ink">{today}</p>
+            <p className="font-display text-[26px] leading-none text-ink">{today || " "}</p>
           </div>
           <div className="flex h-10 w-10 items-center justify-center border-2 border-ink bg-ink font-display text-[22px] text-paper">
             G

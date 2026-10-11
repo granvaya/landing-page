@@ -4,11 +4,14 @@ import { Menu, X } from "lucide-react";
 import { nav, todayFeed } from "../data/content";
 
 function Ticker() {
+  // the second copy only exists to make the marquee loop seamlessly, so add it in the browser only
+  const [looped, setLooped] = useState(false);
+  useEffect(() => setLooped(true), []);
   const items = [
     ...todayFeed.map((i) => `${i.tag} — ${i.heading}`),
     "REVISION CYCLE — DAY 1 · 3 · 7 · 21",
   ];
-  const loop = [...items, ...items];
+  const loop = looped ? [...items, ...items] : items;
   return (
     <div className="overflow-hidden bg-ink py-2 text-paper -mr-6 lg:-mr-10" aria-hidden="true">
       <div className="flex w-max animate-marquee whitespace-nowrap font-mono text-[11.5px] uppercase tracking-[0.2em]">

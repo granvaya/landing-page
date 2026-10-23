@@ -10,23 +10,17 @@ function InstagramIcon(props) {
     </svg>
   );
 }
-function TelegramIcon(props) {
+function LinkedInIcon(props) {
   return (
     <svg viewBox="0 0 24 24" fill="none" {...props}>
-      <path d="M21 4L2.5 11.5l6 2 2 6.5 3-4 4.5 3.3L21 4z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
-      <path d="M8.5 13.5L18 6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-    </svg>
-  );
-}
-function XIcon(props) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" {...props}>
-      <path d="M4 4l16 16M20 4L4 20" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+      <rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" strokeWidth="1.8" />
+      <circle cx="8.2" cy="8.2" r="1.2" fill="currentColor" />
+      <path d="M8.2 11v6M12 17v-6M12 13.6c0-1.6 1-2.6 2.4-2.6 1.6 0 2.1 1.1 2.1 2.7V17" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }
 
-const iconMap = { Instagram: InstagramIcon, Telegram: TelegramIcon, X: XIcon };
+const iconMap = { Instagram: InstagramIcon, LinkedIn: LinkedInIcon };
 
 export default function Footer() {
   return (
@@ -51,12 +45,14 @@ export default function Footer() {
             <div>
               <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-paper/45">Follow</p>
               <div className="mt-3 flex gap-3">
-                {footer.links.map((label) => {
+                {footer.links.map(({ label, href }) => {
                   const Icon = iconMap[label];
                   return (
                     <a
                       key={label}
-                      href="#"
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer me"
                       aria-label={label}
                       className="flex h-9 w-9 items-center justify-center border-2 border-paper/40 transition-colors hover:border-marker hover:bg-marker hover:text-ink"
                     >

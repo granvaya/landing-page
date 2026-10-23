@@ -222,7 +222,10 @@ export const faqs = [
 export const footer = {
   tagline: "Revise. Retain. Reproduce.",
   contact: "support@granvaya.in",
-  links: ["Instagram", "Telegram", "X"],
+  links: [
+    { label: "Instagram", href: "https://www.instagram.com/granvaya.in/" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/granvaya-india-6a1046440/" },
+  ],
   legal: ["Privacy Policy", "Terms"],
   disclaimer: "Granvaya is an independent preparation tool and is not affiliated with UPSC.",
 };

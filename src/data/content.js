@@ -219,6 +219,21 @@ export const faqs = [
   },
 ];
 
+export const whatIs = {
+  paragraphs: [
+    "Granvaya is a UPSC current-affairs notes and revision app for Civil Services aspirants. Each day it turns the newspaper into notes filed under the exact GS syllabus topic, keeps every story on one timeline, and revises it with you on Day 1, 3, 7 and 21, so what you read stays with you.",
+    "It is currently in a free early-access pilot, so it is not a finished public product yet. It is an independent study aid, not affiliated with UPSC, and it cannot promise exam results.",
+  ],
+  facts: [
+    { label: "Who it's for", value: "UPSC Civil Services aspirants preparing for Prelims and Mains" },
+    { label: "What it does", value: "Turns daily current affairs into syllabus-linked notes, then revises them with spaced quizzes" },
+    { label: "Sources in the pilot", value: "The Hindu, The Indian Express and PIB" },
+    { label: "Syllabus mapping", value: "GS 1 to GS 4, with cross-links across papers" },
+    { label: "Cost", value: "Free during the pilot. Pricing will be announced before launch." },
+    { label: "Status", value: "Early-access pilot. Join the pilot above to get a seat as they open." },
+  ],
+};
+
 export const footer = {
   tagline: "Revise. Retain. Reproduce.",
   contact: "support@granvaya.in",

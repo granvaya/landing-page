@@ -10,6 +10,7 @@ import ImportanceDemo from "./components/ImportanceDemo";
 import About from "./components/About";
 import JoinPilot from "./components/JoinPilot";
 import FAQ from "./components/FAQ";
+import WhatIs from "./components/WhatIs";
 import Footer from "./components/Footer";
 const ScrollDissolveReveal = lazy(() =>
   import("./components/ScrollDissolveReveal").then((m) => ({ default: m.ScrollDissolveReveal }))
@@ -57,6 +58,7 @@ export default function App() {
           <About />
           <JoinPilot ref={formRef} />
           <FAQ />
+          <WhatIs />
         </main>
         <Footer />
       </div>

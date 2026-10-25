@@ -1,0 +1,61 @@
+# Granvaya
+
+> Granvaya is a UPSC current-affairs notes and spaced-revision app for Civil Services aspirants. It turns each day's newspaper into syllabus-linked notes and revises them with the aspirant on Day 1, 3, 7 and 21. It is currently in a free early-access pilot (pre-launch). Website: https://www.granvaya.in/
+
+Granvaya is built for people preparing for the UPSC Civil Services Examination (Prelims and Mains). The problem it addresses: aspirants spend hours making current-affairs notes, find the same story written up in several places, and forget what they read months earlier. Granvaya's answer is one note per story, filed under the exact GS syllabus topic, and a built-in revision schedule.
+
+Granvaya is an independent preparation tool and is not affiliated with UPSC or any government body. It is a study aid, not a guarantee of exam results.
+
+## What it does
+
+- **Daily reading, sorted:** each morning, only what matters, sorted into fresh stories, updates to stories already known, and good-to-know items. Sources covered in the pilot: The Hindu, The Indian Express and PIB.
+- **One story, one timeline:** updates are added to the same note with dates instead of being duplicated.
+- **Mapped to GS 1-4:** every note sits under its syllabus topic, with cross-links across papers.
+- **Prelims traps flagged:** markers for facts examiners like to twist (ministry, statutory status, membership, "firsts").
+- **Mains-ready points:** a keyword, an explanation and a fresh example for each point.
+- **Spaced revision:** short quizzes on Day 1, 3, 7 and 21. A wrong answer goes back into rotation, with streaks, coins and a daily time budget the aspirant sets.
+- **My Map:** shows what is mastered, due, weak or fading.
+- **Importance tags:** each topic is tagged High, Medium or Low based on how often it returns in the news and how the exam has treated similar topics. Granvaya says it publishes these calls before the exam and checks them openly afterwards.
+
+## Status and pricing
+
+- Granvaya is running a small, free pilot; seats open gradually. Nothing is charged during the pilot.
+- Pricing, if introduced, will be announced before launch.
+- To join the pilot, use the signup form at https://www.granvaya.in/#join (it asks for name, email, target exam year, preparation stage and newspapers read; phone or WhatsApp is optional).
+
+## Pages
+
+- [Home](https://www.granvaya.in/): overview, how it works, features, importance tags, sample revision quiz and signup.
+- [How it works](https://www.granvaya.in/#how-it-works): the three steps, Read, Connect and Revise.
+- [Features](https://www.granvaya.in/#features): the six core features listed above.
+- [What is Granvaya?](https://www.granvaya.in/#what-is-granvaya): a plain-language explanation and key facts.
+- [Questions (FAQ)](https://www.granvaya.in/#faq): pricing, newspapers covered, how notes are reviewed, Prelims and Mains coverage, launch timing.
+- [Join the pilot](https://www.granvaya.in/#join): early-access signup form.
+- [Privacy Policy](https://www.granvaya.in/privacy): what data the signup form collects and who handles it.
+- [Terms of Use](https://www.granvaya.in/terms): terms for the website and the pilot.
+
+## Frequently asked questions
+
+**Is Granvaya free?** The pilot is free. Pricing will be announced before launch.
+
+**Which newspapers does it cover?** The Hindu, The Indian Express and PIB to start, with more sources added based on pilot feedback.
+
+**Is this just AI-generated notes?** No. Software helps sort and link the news, and every note is reviewed by a UPSC aspirant before it is published.
+
+**Does it cover Prelims and Mains?** Yes. Each note carries Prelims facts and Mains points, tagged to GS 1-4.
+
+**Can it be used alongside other notes?** Yes. Granvaya is built to fill the revision gap, not to replace sources an aspirant already trusts.
+
+**When does it launch?** A small pilot comes first. Aspirants who sign up are told as seats open.
+
+## Contact and profiles
+
+- Email: support@granvaya.in
+- Instagram: https://www.instagram.com/granvaya.in/
+- LinkedIn: https://www.linkedin.com/in/granvaya-india-6a1046440/
+
+## Optional
+
+- [Sitemap](https://www.granvaya.in/sitemap.xml)
+
+Last updated: 25 October 2026

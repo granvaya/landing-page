@@ -81,6 +81,12 @@ export default function Hero({ onJoin }) {
               >
                 {hero.ctaSecondary}
               </a>
+              <a
+                href="#what-is-granvaya"
+                className="font-mono text-[13px] font-medium uppercase tracking-[0.12em] text-ink-soft underline decoration-ink/40 decoration-2 underline-offset-[6px] transition-colors hover:text-vermilion"
+              >
+                What is Granvaya?
+              </a>
             </div>
 
             <div className="mt-11 flex items-end gap-5 border-t-2 border-ink pt-5">

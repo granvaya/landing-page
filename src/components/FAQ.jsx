@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { Plus } from "lucide-react";
 import { faqs } from "../data/content";
 import { SectionHeading } from "./Section";
@@ -40,19 +40,16 @@ export default function FAQ() {
                     </motion.span>
                   </span>
                 </button>
-                <AnimatePresence initial={false}>
-                  {isOpen && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.25, ease: "easeInOut" }}
-                      className="overflow-hidden"
-                    >
-                      <p className="pb-6 pl-[3.1rem] pr-12 text-[19px] leading-relaxed text-ink-soft">{item.a}</p>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                {/* always rendered so the answer is in the page HTML; collapsed visually when closed */}
+                <motion.div
+                  initial={false}
+                  animate={{ height: isOpen ? "auto" : 0, opacity: isOpen ? 1 : 0 }}
+                  transition={{ duration: 0.25, ease: "easeInOut" }}
+                  className="overflow-hidden"
+                  aria-hidden={!isOpen}
+                >
+                  <p className="pb-6 pl-[3.1rem] pr-12 text-[19px] leading-relaxed text-ink-soft">{item.a}</p>
+                </motion.div>
               </div>
             );
           })}

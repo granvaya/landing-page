@@ -50,6 +50,7 @@ export default function Hero({ onJoin }) {
                 transition={{ duration: 0.85, ease: [0.2, 0.8, 0.2, 1], delay: 0.15 + i * 0.16 }}
               >
                 <Line text={line} />
+                {i < lines.length - 1 && " "}
               </motion.span>
             </span>
           ))}

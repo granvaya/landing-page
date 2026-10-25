@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# SEO audit output (screenshots, rendered copies)
+granvaya.in-audit/

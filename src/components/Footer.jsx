@@ -65,8 +65,8 @@ export default function Footer() {
             <div>
               <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-paper/45">Legal</p>
               <div className="mt-3 flex flex-col gap-1.5">
-                {footer.legal.map((label) => (
-                  <a key={label} href="#" className="text-[17px] hover:text-marker">
+                {footer.legal.map(({ label, href }) => (
+                  <a key={label} href={href} className="text-[17px] hover:text-marker">
                     {label}
                   </a>
                 ))}

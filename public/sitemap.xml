@@ -2,13 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.granvaya.in/</loc>
-    <lastmod>2026-10-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-10-25</lastmod>
+  </url>
+  <url>
+    <loc>https://www.granvaya.in/privacy</loc>
+    <lastmod>2026-10-25</lastmod>
+  </url>
+  <url>
+    <loc>https://www.granvaya.in/terms</loc>
+    <lastmod>2026-10-25</lastmod>
   </url>
   <!--
-    Add a <url> block for each new page as it goes live — privacy policy,
-    terms, the open sample story. Update <lastmod> when a page changes.
-    Only list URLs that return 200 and are meant to be indexed.
+    Add a <url> block for each new page as it goes live (for example the open
+    sample note). Update <lastmod> when a page changes. Only list URLs that
+    return 200 and are meant to be indexed.
   -->
 </urlset>
